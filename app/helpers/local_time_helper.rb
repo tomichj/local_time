@@ -20,7 +20,7 @@ module LocalTimeHelper
     time = utc_time(time)
 
     options[:data] ||= {}
-    options[:data].merge! local: 'time-ago'
+    options[:data].reverse_merge! local: 'time-ago'
 
     time_tag time, time.strftime(DEFAULT_FORMAT), options
   end

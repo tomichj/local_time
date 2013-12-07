@@ -60,6 +60,33 @@ Displays the relative amount of time passed. With age, the descriptions transiti
 * This year: "on Nov 17"
 * Last year: "on Jan 31, 2012"
 
+
+#### Compact date/time helper
+
+```erb
+<%= local_compact(time) %>
+```
+
+Renders:
+
+```html
+<time data-local="compact"
+      datetime="2013-11-27T23:43:22Z">Nov 27</time>
+```
+
+When the DOM loads, the content is immediately replaced with a compact, local-formatted time (if today) or date:
+
+```html
+<time data-local="compact"
+      datetime="2013-11-27T23:43:22Z">11:43pm</time>
+```
+
+The compact datetime representation changes based on the relative amount of time passed:
+* Today: "11:52am"
+* Yesterday: "Nov 26"
+* Last year: "Nov 27, '13"
+
+
 #### Installation
 
 1. Add `gem 'local_time'` to your Gemfile.
